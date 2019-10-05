@@ -2,6 +2,16 @@ const { expect } = require('chai');
 const { decode } = require('./src/index.js');
 
 describe("Easy", function() {
+    it("Sentence test 0.0", function() {
+        const expr = "0010101010";
+        const result = "h";
+        expect(decode(expr)).to.equal(result);
+    });
+    it("Sentence test 0.1", function() {
+        const expr = "**********";
+        const result = " ";
+        expect(decode(expr)).to.equal(result);
+    });
     it("Sentence test 1", function() {
         const expr = "00101010100000000010001011101000101110100000111111**********00001011110000111111000010111000101110100000111010";
         const result = "hello world";
